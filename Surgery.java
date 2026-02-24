@@ -1,3 +1,5 @@
+package hospital;
+
 public class Surgery extends Service implements Billable {
 
     public Surgery(String name, double cost) {
@@ -6,7 +8,7 @@ public class Surgery extends Service implements Billable {
 
     @Override
     public void perform() {
-        System.out.println("Performing " + this.getName() + " surgery");
+        System.out.println("Performing " + this.getName() + ".");
     }
 
     @Override
