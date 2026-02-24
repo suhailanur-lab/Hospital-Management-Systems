@@ -1,4 +1,7 @@
+package hospital;
+
 public abstract class Person {
+
     private String name;
     private int age;
 
@@ -7,11 +10,23 @@ public abstract class Person {
         this.age = age;
     }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+ 
+    public String getName() {
+        return name;
+    }
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+  
     public abstract void showInfo();
 }
