@@ -1,3 +1,5 @@
+package hospital;
+
 public class Patient extends Person implements Billable {
 
     private double totalBill;
@@ -9,7 +11,9 @@ public class Patient extends Person implements Billable {
 
     @Override
     public void showInfo() {
-        System.out.println("Patient: " + this.getName() + ", Bill: $" + totalBill);
+        System.out.println("Patient: " + this.getName() +
+                ", Age: " + this.getAge() +
+                ", Total Bill: $" + totalBill);
     }
 
     @Override
