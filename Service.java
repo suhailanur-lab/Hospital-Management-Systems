@@ -1,4 +1,7 @@
+package hospital;
+
 public abstract class Service {
+
     private String name;
     private double cost;
 
@@ -7,8 +10,13 @@ public abstract class Service {
         this.cost = cost;
     }
 
-    public String getName() { return name; }
-    public double getCost() { return cost; }
+    public String getName() {
+        return name;
+    }
+
+    public double getCost() {
+        return cost;
+    }
 
     public abstract void perform();
 }
