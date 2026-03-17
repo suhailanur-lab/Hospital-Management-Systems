@@ -12,3 +12,8 @@ edited today:User input using Scanner instead of fixed values
 
 
 Also, try-catch block is used to prevent the program from crashing when the user enters something like a text instead of number which was required
+## How to Run
+Open the project in any Java runner
+ Run the `Main.java` file.
+ Enter the required details when prompted (doctor, patient, nurse, and surgery).
+The system will display the information and show the total bill.
