@@ -25,7 +25,7 @@ public class Main {
             Doctor doctor = new Doctor(dName, dAge, specialty);
 
     
-            System.out.print("\nEnter patient name: ");
+            System.out.print(" Enter patient name: ");
             String pName = input.nextLine();
 
             System.out.print("Enter patient age: ");
@@ -35,7 +35,7 @@ public class Main {
             Patient patient = new Patient(pName, pAge);
 
          
-            System.out.print("\nEnter nurse name: ");
+            System.out.print(" Enter nurse name: ");
             String nName = input.nextLine();
 
             System.out.print("Enter nurse age: ");
@@ -48,7 +48,7 @@ public class Main {
             Nurse nurse = new Nurse(nName, nAge, dept);
 
          
-            System.out.print("\nEnter surgery name: ");
+            System.out.print(" Enter surgery name: ");
             String sName = input.nextLine();
 
             System.out.print("Enter surgery cost: ");
@@ -62,14 +62,14 @@ public class Main {
             patient.showInfo();
             nurse.showInfo();
 
-            System.out.println(" ACTIONS ---");
+            System.out.println(" ACTIONS ");
             doctor.treat();
             nurse.treat();
             surgery.perform();
 
       
             patient.addToBill(surgery.getBill());
-            System.out.println("\nTotal bill: $" + patient.getBill());
+            System.out.println("Total bill: $" + patient.getBill());
 
         } catch (Exception e) {
             System.out.println("Error: wrong input type.");
