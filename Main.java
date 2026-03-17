@@ -1,37 +1,81 @@
 package hospital;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("=== HOSPITAL MANAGEMENT SYSTEM ===\n");
+        Scanner input = new Scanner(System.in);
 
-        
-        Doctor doctor = new Doctor("Dr. Smith", 45, "Cardiology");
-        Patient patient = new Patient("John Doe", 28);
-        Nurse nurse = new Nurse("Mary Jane", 32, "Emergency");
-        Surgery surgery = new Surgery("Heart Surgery", 5000);
+        System.out.println("HOSPITAL MANAGEMENT SYSTEM");
 
-        
-        System.out.println("---- PEOPLE ----");
-        doctor.showInfo();
-        patient.showInfo();
-        nurse.showInfo();
+        try {
+         
+            System.out.print("Enter doctor name: ");
+            String dName = input.nextLine();
 
-        
-        System.out.println("\n---- TREATMENT ----");
-        doctor.treat();
-        nurse.treat();
+            System.out.print("Enter doctor age: ");
+            int dAge = input.nextInt();
+            input.nextLine();
 
-        
-        System.out.println("\n---- SERVICE ----");
-        surgery.perform();
+            System.out.print("Enter doctor specialty: ");
+            String specialty = input.nextLine();
 
-        
-        System.out.println("\n---- BILLING ----");
-        patient.addToBill(surgery.getBill());
-        System.out.println("Updated Patient Bill: $" + patient.getBill());
+            Doctor doctor = new Doctor(dName, dAge, specialty);
 
-        System.out.println("\nProgram Finished Successfully.");
+    
+            System.out.print("\nEnter patient name: ");
+            String pName = input.nextLine();
+
+            System.out.print("Enter patient age: ");
+            int pAge = input.nextInt();
+            input.nextLine();
+
+            Patient patient = new Patient(pName, pAge);
+
+         
+            System.out.print("\nEnter nurse name: ");
+            String nName = input.nextLine();
+
+            System.out.print("Enter nurse age: ");
+            int nAge = input.nextInt();
+            input.nextLine();
+
+            System.out.print("Enter nurse department: ");
+            String dept = input.nextLine();
+
+            Nurse nurse = new Nurse(nName, nAge, dept);
+
+         
+            System.out.print("\nEnter surgery name: ");
+            String sName = input.nextLine();
+
+            System.out.print("Enter surgery cost: ");
+            double cost = input.nextDouble();
+
+            Surgery surgery = new Surgery(sName, cost);
+
+          
+            System.out.println(" DETAILS");
+            doctor.showInfo();
+            patient.showInfo();
+            nurse.showInfo();
+
+            System.out.println(" ACTIONS ---");
+            doctor.treat();
+            nurse.treat();
+            surgery.perform();
+
+      
+            patient.addToBill(surgery.getBill());
+            System.out.println("\nTotal bill: $" + patient.getBill());
+
+        } catch (Exception e) {
+            System.out.println("Error: wrong input type.");
+        } finally {
+            input.close();
+            System.out.println("Program ended.");
+        }
     }
 }
