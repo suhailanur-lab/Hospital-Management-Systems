@@ -10,7 +10,6 @@ public abstract class Person {
         this.age = age;
     }
 
- 
     public String getName() {
         return name;
     }
@@ -27,6 +26,5 @@ public abstract class Person {
         this.age = age;
     }
 
-  
     public abstract void showInfo();
 }
